@@ -14,7 +14,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// prisma/schema.prisma
+
 model User {
   id    Int     @id @default(autoincrement())
   name  String
+  age   Int?    // 年齢を追加。過去のデータには年齢がないかもしれんので、nullを許容する
 }
